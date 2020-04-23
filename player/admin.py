@@ -1,3 +1,12 @@
 from django.contrib import admin
+from .models import (
+     Player,
+     Pom
+)
 
-# Register your models here.
+@admin.register(Player)
+class PlayerAdmin(admin.ModelAdmin):
+     list_display_links = ('first_name', 'middle_name', 'last_name')
+     list_display = ('first_name','middle_name', 'last_name', 'position')
+
+admin.site.register(Pom)
