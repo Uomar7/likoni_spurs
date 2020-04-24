@@ -14,11 +14,13 @@ class Player(models.Model):
           ('ST', 'Striker'),
      )
 
-     profile_pic = models.ImageField("Player's image", upload_to='profiles/')
+     profile_pic = models.ImageField("Player's image", upload_to='profiles/', blank=True)
      first_name = models.CharField('First name', max_length=50)
      middle_name = models.CharField('Middle name', max_length=50, blank=True)
      last_name = models.CharField('Last name', max_length=50)
      _dob = models.DateField('Date of Birth')
+     captain = models.BooleanField('Captain', default=False)
+     pom = models.BooleanField('Player of the month', default=False)
      position = models.CharField("Player position",choices=POSITIONS, default="Choose position", max_length=50)
      bio = models.TextField("Player's Biography", blank=True)
 
@@ -27,10 +29,3 @@ class Player(models.Model):
      
      def get_date_of_birth(self):
           return self._dob
-
-class Pom(models.Model):
-     player = models.OneToOneField(Player, on_delete=models.CASCADE, related_query_name="pom")
-     pom = models.BooleanField("P.O.M", default=False)
-
-     def __str__(self):
-          return self.player.first_name
