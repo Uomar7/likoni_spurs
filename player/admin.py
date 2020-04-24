@@ -12,3 +12,5 @@ class PlayerAdmin(admin.ModelAdmin):
           ('_dob', 'position',),
           'bio', 'profile_pic', 'captain', 'pom',
      )
+
+     list_filter = ('position', 'captain',)
