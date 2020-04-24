@@ -5,7 +5,7 @@
      </tr>
      {% for player in players %}
      <tr>
-          <td>{{ player}}</td>
+          <td> <a href="{% url 'detail' player.pk %}">{{ player }}</a></td>
           <td>{{ player.position}}</td>          
      </tr>
      {% endfor %}

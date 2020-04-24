@@ -1,0 +1,6 @@
+<h1>{{ player | title }}</h1>
+<p>{{ player.get_date_of_birth|date:"D d M Y " }}</p>
+<p>{{ player.position }}</p>
+<p>{{ player.bio }}</p>
+
+<a href="{% url 'player_list' %}" type="button">Back</a>
