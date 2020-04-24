@@ -7,11 +7,11 @@ from .models import (
 @admin.register(Player)
 class PlayerAdmin(admin.ModelAdmin):
      list_display_links = ('first_name', 'middle_name', 'last_name')
-     list_display = ('first_name','middle_name', 'last_name', 'position')
+     list_display = ('first_name','middle_name', 'last_name', 'position', 'pom')
      fields = (
           ('first_name','middle_name', 'last_name',),
-          ('dob', 'position',),
-          'bio',
+          ('_dob', 'position',),
+          'bio', 'profile_pic',
      )
 
 admin.site.register(Pom)
