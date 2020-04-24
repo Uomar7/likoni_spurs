@@ -1,0 +1,7 @@
+<ol>
+{% for player in players %}
+{% if player.position == 'GK' %}
+<li>{{player}}</li>
+{% endif %}
+{% endfor %}
+</ol>
