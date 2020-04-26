@@ -1,5 +1,7 @@
 from django.shortcuts import render,get_object_or_404, get_list_or_404
 from .models import Player
+from django.utils import timezone
+import datetime as dt
 from django.views.generic import (
      ListView,
      DetailView,

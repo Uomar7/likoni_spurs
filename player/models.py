@@ -25,7 +25,7 @@ class Player(models.Model):
      bio = models.TextField("Player's Biography", blank=True)
 
      def __str__(self):
-          return self.first_name +" "+ self.last_name
+          return self.first_name +" "+ self.middle_name +" "+ self.last_name
      
      def get_date_of_birth(self):
           return self._dob
